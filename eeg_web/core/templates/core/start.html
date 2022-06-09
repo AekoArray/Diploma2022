@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="mt-4 d-flex ">
+        <div>
+            <p class="display-3">Анализ ЭЭГ</p>
+            <p class="display-5">Позволяет находить паттерны болезней</p>
+
+            <form action="{% url 'core:result' %}" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <label for="formFileLg" class="form-label">Загрузите данные в формате <span
+                        class="badge bg-secondary">.txt</span></label>
+                <input class="form-control form-control-md" id="formFileLg" type="file" name="eeg_data">
+                <button type="submit" class="btn btn-primary my-3">Проверить данные</button>
+            </form>
+            <p><a href="{% url 'core:data_format' %}">Формат данных</a></p>
+
+        </div>
+    </div>
+{% endblock %}

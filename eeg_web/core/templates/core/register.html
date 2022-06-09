@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="mt-4 d-flex ">
+        <div>
+            <p class="display-3">Регистрация</p>
+            <div class="w-50">
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3 w-100">
+                    <label for="username" class="form-label">Имя пользователя</label>
+                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username">
+                    <div id="emailHelp" class="form-text">Обязательное поле. Не более 150 символов. Только буквы, цифры
+                        и символы @/./+/-/_.
+                    </div>
+                </div>
+                <div class="mb-3 w-100">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button class="btn btn-primary" type="submit">Создать аккаунт</button>
+            </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

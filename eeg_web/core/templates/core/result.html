@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="mt-4 d-flex ">
+        <div>
+            <p class="display-3">Анализ ЭЭГ</p>
+            <p class="display-5">Результаты анализа</p>
+
+            {% if has_pattern %}
+                <div class="alert alert-danger" role="alert">
+                    <p class="h4"><strong>Модель нашла паттерны абсанса</strong></p>
+                    <p>Паттерны выделены красным цветом</p>
+                </div>
+            {% else %}
+                <div class="alert alert-success" role="alert">
+                    <p class="h4"><strong>Модель не нашла паттерны абсанса</strong></p>
+                </div>
+            {% endif %}
+
+            {% if image %}
+                <img src="{{ image }}" alt="Result">
+            {% endif %}
+            <p><a href="{% url 'core:start_page' %}">Загрузить еще</a></p>
+
+        </div>
+    </div>
+{% endblock %}

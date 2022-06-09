@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="mt-4 d-flex ">
+        <div>
+            <p class="display-3">Анализ ЭЭГ</p>
+            <p class="display-5">Формат данных</p>
+
+            <div class="my-3 w-75">
+                <p class="h4"><strong>Какой формат данных используется?</strong></p>
+                <p class="h5">Входной файл должен иметь ресширение <span class="badge bg-secondary">.txt</span>
+                    В файле должен находиться массив чисел, которые прдеставляют собой занчения записи ЭЭГ за 1 секунду</p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

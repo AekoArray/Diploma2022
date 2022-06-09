@@ -1,0 +1,19 @@
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid ml-4">
+            <a class="navbar-brand" href="/">Поиск паттернов абсанса</a>
+            {% if user.is_authenticated %}
+                <div>
+                    <span>Привет, {{ user.username }}</span>
+                    <a href="{% url 'core:history' %}">История анализов</a>
+                    <a href="{% url 'core:logout' %}">Выход</a>
+                </div>
+            {% else %}
+                <div>
+                    <a href="{% url 'core:login' %}" class="mr-2">Вход</a>
+                    <a href="{% url 'core:registration' %}">Регистрация</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</header>
